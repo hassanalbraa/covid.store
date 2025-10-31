@@ -1,0 +1,74 @@
+here<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COVID STORE — معلومات الحساب</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:#e8eefc;
+  background:linear-gradient(120deg,#0b0f1a,#07122a 60%);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+.container {
+  width:90%;
+  max-width:500px;
+  text-align:center;
+}
+h2 {
+  margin-bottom:1rem;
+}
+form {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+input, select {
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.03);
+  background:rgba(255,255,255,0.03);
+  color:#e8eefc;
+  outline:none;
+}
+input::placeholder {
+  color:rgba(232,238,252,0.6);
+}
+.btn {
+  margin-top:16px;
+  padding:12px 28px;
+  background:linear-gradient(90deg,#6e4bff,#00b0ff);
+  color:white;
+  border:none;
+  border-radius:12px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:transform .2s;
+}
+.btn:hover {
+  transform:scale(1.08);
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>أدخل معلومات الحساب</h2>
+<form action="review.html" method="get">
+  <input type="text" name="username" placeholder="اسم المستخدم / ID">
+  <select name="payment">
+    <option value="bank">بنكك</option>
+    <option value="mycash">ماي كاشي</option>
+  </select>
+  <input type="text" name="accountinfo" placeholder="معلومات الحساب حسب طريقة الدفع">
+  <button type="submit" class="btn">التالي</button>
+</form>
+</div>
+</body>
+</html>
