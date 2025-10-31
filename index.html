@@ -1,213 +1,62 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>𝐂𝐎𝐕𝐈𝐃 𝐒𝐓𝐎𝐑𝐄</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COVID STORE — ترحيب</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(-45deg, #e0f0ff, #c0e8ff, #a0d4ff, #80c0ff);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite, fadeIn 1s ease-in;
-    font-family: 'Roboto', Arial, sans-serif;
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:#e8eefc;
+  background:linear-gradient(120deg,#0b0f1a,#07122a 60%);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
 }
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.container {
+  text-align:center;
+  animation:fadeIn 1s ease-in-out;
 }
 h1 {
-    text-align: center;
-    color: #0055aa;
-    margin-bottom: 20px;
-    font-size: 2em;
+  font-size:3rem;
+  margin-bottom:1rem;
+  background:linear-gradient(90deg,#6e4bff,#00b0ff);
+  -webkit-background-clip:text;
+  color:transparent;
 }
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
+p {
+  color:rgba(232,238,252,0.6);
+  margin-bottom:2rem;
+  font-size:1.1rem;
 }
-input, select, button {
-    width: 90%;
-    max-width: 400px;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    transition: all 0.3s ease;
+.btn {
+  padding:12px 28px;
+  background:linear-gradient(90deg,#6e4bff,#00b0ff);
+  color:white;
+  border:none;
+  border-radius:12px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:transform .2s;
 }
-button {
-    margin-top: 20px;
-    background-color: #0055aa;
-    color: white;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
+.btn:hover {
+  transform:scale(1.08);
 }
-button:hover {
-    background-color: #ffcc00;
-    color: #000;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255,204,0,0.7);
-}
-.game-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    flex-wrap: wrap;
-}
-.game-icons img {
-    width: 150px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    margin: 10px;
-}
-.game-icons img.selected {
-    border: 4px solid #ffcc00;
-    box-shadow: 0 0 20px rgba(255,204,0,0.7);
-}
-.game-icons img:hover {
-    transform: scale(1.1) rotate(-2deg);
-}
-#price {
-    transition: all 0.5s ease;
-}
-#paymentInfo {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #222;
-    background: rgba(255,255,255,0.6);
-    padding: 8px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
+@keyframes fadeIn{
+  0%{opacity:0;transform:translateY(20px)}
+  100%{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
 <body>
-
-<h1>𝐂𝐎𝐕𝐈𝐃 𝐒𝐓𝐎𝐑𝐄</h1>
-
-<label>اختر اللعبة:</label>
-<div class="game-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Logo_of_Garena_Free_Fire.png" 
-         id="FreeFire" alt="Free Fire" onclick="selectGame('Free Fire', this)">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/PUBG_Mobile_simple_logo_black.png" 
-         id="PUBG" alt="PUBG" onclick="selectGame('PUBG', this)">
+<div class="container">
+<h1>COVID STORE</h1>
+<p>أهلا بك في متجر شحن الألعاب</p>
+<a href="game.html"><button class="btn">ابدأ الآن</button></a>
 </div>
-
-<label>اختر العرض:</label>
-<select id="offer" onchange="updatePrice()"></select>
-
-<label>السعر:</label>
-<input type="text" id="price" placeholder="السعر سيحسب تلقائياً" readonly>
-
-<label>ادخل ID الخاص بك:</label>
-<input type="text" id="userID" placeholder="ادخل ID هنا">
-
-<label>اختر طريقة الدفع:</label>
-<select id="payment" onchange="showPaymentInfo()">
-    <option value="">-- اختر طريقة الدفع --</option>
-    <option value="My Cash">ماي كاشي</option>
-    <option value="Bank">بنكك</option>
-</select>
-
-<div id="paymentInfo"></div>
-
-<button onclick="sendWhatsApp()">شحن الآن</button>
-
-<script>
-var offers = {
-    "Free Fire": ["100", "500", "1000"],
-    "PUBG": ["60", "300", "600"]
-};
-
-var selectedGame = "Free Fire";
-
-function selectGame(game, elem) {
-    selectedGame = game;
-    document.querySelectorAll('.game-icons img').forEach(img => img.classList.remove('selected'));
-    elem.classList.add('selected');
-
-    var offerSelect = document.getElementById('offer');
-    offerSelect.innerHTML = "";
-    offers[game].forEach(function(item) {
-        var opt = document.createElement("option");
-        opt.value = item;
-        opt.text = game === "Free Fire" ? item + " جوهرة" : item + " UC";
-        offerSelect.add(opt);
-    });
-    updatePrice();
-}
-
-function updatePrice() {
-    var offer = document.getElementById('offer').value;
-    var priceField = document.getElementById('price');
-    var price = 0;
-
-    if(selectedGame === "Free Fire") {
-        var numeric = parseInt(offer) || 100;
-        price = (numeric / 100) * 3400;
-    } else if(selectedGame === "PUBG") {
-        if(offer == "60") price = 3000;
-        else if(offer == "300") price = 14000;
-        else if(offer == "600") price = 28000;
-    }
-
-    priceField.value = price + " ج.س";
-    priceField.style.color = "#ff5500";
-    setTimeout(() => { priceField.style.color = "#000"; }, 500);
-}
-
-function showPaymentInfo() {
-    var payment = document.getElementById('payment').value;
-    var info = document.getElementById('paymentInfo');
-    
-    if (payment === "My Cash") {
-        info.innerHTML = "📱 رقم حساب My Cash: <b>123456</b><br>الاسم: أحمد محمد";
-    } 
-    else if (payment === "Bank") {
-        info.innerHTML = "🏦 رقم الحساب : <b>1234589</b><br>بنك الخرطوم — الاسم: أحمد محمد";
-    } 
-    else {
-        info.innerHTML = "";
-    }
-}
-
-window.onload = function() {
-    selectGame("Free Fire", document.getElementById('FreeFire'));
-};
-
-function sendWhatsApp() {
-    var offer = document.getElementById('offer').value;
-    var userID = document.getElementById('userID').value;
-    var price = document.getElementById('price').value;
-    var payment = document.getElementById('payment').value;
-
-    var message = `اللعبة: ${selectedGame}\nالعرض: ${offer} ${selectedGame === "Free Fire" ? "جوهرة" : "UC"}\nID: ${userID}\nالسعر: ${price}\nطريقة الدفع: ${payment}\nشكرًا لاستخدامك تطبيقنا ❤️`;
-
-    var phone = "249916103363";
-    var url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-}
-</script>
-
 </body>
 </html>
